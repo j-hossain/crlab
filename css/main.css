@@ -409,7 +409,7 @@ h6 {
 #business {
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: #f7f7f7;
+  background-color: #f3f0ea;
 }
 .business_1 {
   text-align: center;
@@ -2517,8 +2517,9 @@ hr.star-primary:after {
     padding-bottom: 20px;
   }
   .team_1 img {
-    width: 200px;
+    width: 100%;
     height: 300px;
+    object-fit: cover;
   }
   #center_about {
     padding-top: 50px;
