@@ -1246,7 +1246,7 @@ h6 {
 
 /*********************center_about****************/
 #center_about {
-  background-image: url(../img/7.jpg);
+  background-image: url(../img/aboutUsHomeImage.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 197px;
@@ -1275,6 +1275,15 @@ h6 {
   font-size: 17px;
   font-weight: bold;
   letter-spacing: 1px;
+}
+.about_inner img {
+  width: 695px;
+  height: 452px;
+  object-fit: cover;
+}
+
+#about .about_1 h2{
+  margin-bottom: 30px;
 }
 
 /*********************center_end****************/
@@ -2535,7 +2544,9 @@ hr.star-primary:after {
     text-align: center;
   }
   .about_inner img {
-    width: 100%;
+    width: 695px;
+    height: 452px;
+    object-fit: cover;
   }
   .about_inner_1 {
     position: static;
