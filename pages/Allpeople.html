@@ -13,6 +13,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+	<script src="../scripts/main.js"></script>
+	<script src="../scripts/allPeople.js"></script>
 	<script src="../scripts/jquery-2.1.1.min.js"></script>
 	<script src="../scripts/bootstrap.min.js"></script>
 
@@ -33,8 +35,8 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span> </button>
-					<a class="navbar-brand" href="../index.html"><img src="../logo/logoonlyorange.png" style="width: 180px;"
-							alt=""></a>
+					<a class="navbar-brand" href="../index.html"><img src="../logo/logoonlyorange.png"
+							style="width: 180px;" alt=""></a>
 				</div>
 
 
@@ -69,38 +71,37 @@
 			<!-- /.container-fluid -->
 		</nav>
 	</section>
-	
+
 	<section id="blog_main">
 		<div class="container">
-			 <div class="row">
-			   <div class="blog_main_1 clearfix">
-				 <div class="col-sm-7">
-				  <div class="center_about_left">
-					<div class="blog_main_2 clearfix">
-					  <hr class="hr_2">
-					  <h1>Meet our members</h1>
-					  <p>people</p>
+			<div class="row">
+				<div class="blog_main_1 clearfix">
+					<div class="col-sm-7">
+						<div class="center_about_left">
+							<div class="blog_main_2 clearfix">
+								<hr class="hr_2">
+								<h1>Meet our members</h1>
+								<p>people</p>
+							</div>
+						</div>
 					</div>
-				  </div>
-				 </div>
-				 <div class="col-sm-5"></div>
-			   </div>
-			 </div>
-		   </div>  	  
-	 </section>
-	 <section id="business">
+					<div class="col-sm-5"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="business">
 		<div class="container">
 			<div class="row">
 				<div class="business_1">
 					<h2>People</h2>
 				</div>
 				<div class="team  clearfix">
-
-					<div class="col-sm-3 ">
+					<div id="personTemplate" class="col-sm-3 disNone">
 						<div class="team_1 clearfix">
 							<div class="grid clearfix">
 								<figure class="effect-jazz">
-									<img src="img/people1.jpeg" alt="img25">
+									<img id="personImage" src="" alt="Person Image">
 									<figcaption>
 
 									</figcaption>
@@ -108,160 +109,13 @@
 							</div>
 						</div>
 						<div class="team_inner clearfix text-center">
-							<h3><a href="./people/demopeople/">Maruf Billah</a></h3>
-							<h4>Designation</h4>
-							<p class="para_2">Some info about this member</p>
+							<h3 id="personName"></h3>
+							<h4 id="personDesignation"></h4>
+							<p class="para_2" id="personResearchArea"></p>
 							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-google"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="team_1 clearfix">
-							<div class="grid clearfix">
-								<figure class="effect-jazz">
-									<img src="img/people2.jpeg" alt="img25">
-									<figcaption>
-									</figcaption>
-								</figure>
-							</div>
-						</div>
-						<div class="team_inner clearfix text-center">
-							<h3><a href="#">Hasibul Hossain</a></h3>
-							<h4>Designation</h4>
-							<p class="para_2">Some info about this member</p>
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-google"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="team_1 clearfix">
-							<div class="grid clearfix">
-								<figure class="effect-jazz">
-									<img src="img/people3.jpeg" alt="img25">
-									<figcaption>
-									</figcaption>
-								</figure>
-							</div>
-						</div>
-						<div class="team_inner clearfix text-center">
-							<h3><a href="#">Jahin Hossain</a></h3>
-							<h4>Designation</h4>
-							<p class="para_2">Some info about this member</p>
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-google"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="team_1 clearfix">
-							<div class="grid clearfix">
-								<figure class="effect-jazz">
-									<img src="img/people3.jpeg" alt="img25">
-									<figcaption>
-									</figcaption>
-								</figure>
-							</div>
-						</div>
-						<div class="team_inner clearfix text-center">
-							<h3><a href="#">Jahin Hossain</a></h3>
-							<h4>Designation</h4>
-							<p class="para_2">Some info about this member</p>
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-google"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="team_1 clearfix">
-							<div class="grid clearfix">
-								<figure class="effect-jazz">
-									<img src="img/people3.jpeg" alt="img25">
-									<figcaption>
-									</figcaption>
-								</figure>
-							</div>
-						</div>
-						<div class="team_inner clearfix text-center">
-							<h3><a href="#">Jahin Hossain</a></h3>
-							<h4>Designation</h4>
-							<p class="para_2">Some info about this member</p>
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-google"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="team_1 clearfix">
-							<div class="grid clearfix">
-								<figure class="effect-jazz">
-									<img src="img/people3.jpeg" alt="img25">
-									<figcaption>
-									</figcaption>
-								</figure>
-							</div>
-						</div>
-						<div class="team_inner clearfix text-center">
-							<h3><a href="#">Jahin Hossain</a></h3>
-							<h4>Designation</h4>
-							<p class="para_2">Some info about this member</p>
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-google"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="team_1 clearfix">
-							<div class="grid clearfix">
-								<figure class="effect-jazz">
-									<img src="img/people3.jpeg" alt="img25">
-									<figcaption>
-									</figcaption>
-								</figure>
-							</div>
-						</div>
-						<div class="team_inner clearfix text-center">
-							<h3><a href="#">Jahin Hossain</a></h3>
-							<h4>Designation</h4>
-							<p class="para_2">Some info about this member</p>
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-google"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3">
-						<div class="team_1 clearfix">
-							<div class="grid clearfix">
-								<figure class="effect-jazz">
-									<img src="img/people3.jpeg" alt="img25">
-									<figcaption>
-									</figcaption>
-								</figure>
-							</div>
-						</div>
-						<div class="team_inner clearfix text-center">
-							<h3><a href="#">Jahin Hossain</a></h3>
-							<h4>Designation</h4>
-							<p class="para_2">Some info about this member</p>
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-google"></i></a></li>
+								<li><a href="#" id="personLinkedin"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#" id="personGoogleScholar"><i class="fa fa-google"></i></a></li>
+								<li><a href="#" id="personResearchGate"><i class="fab fa-researchgate"></i></a></li>
 							</ul>
 						</div>
 					</div>

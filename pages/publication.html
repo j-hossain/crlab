@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/publicationInfo.js"></script>
     <script src="../scripts/jquery-2.1.1.min.js"></script>
     <script src="../scripts/bootstrap.min.js"></script>
 
@@ -47,7 +49,6 @@
                         <li><a class=" color_1 active_1" href="./Allpeople.html">People</a></li>
                         <li><a class="color_1" href="./allEvents.html">Events</a></li>
                         <li><a class="color_1" href="./contact.html">Contacts</a></li>
-
                     </ul>
                 </div>
 
@@ -59,13 +60,14 @@
     <section id="publication">
         <div class="container">
             <h2 style="text-align: center;">Publication Details</h2>
-            <div class="work_right_1  clearfix">
+            <div id="publicationDiv" class="work_right_1  clearfix">
                 <div class="work_right_1_inner">
-                    <p></p>
+                    <p class="publicationInfo"></p>
                     <div class="details" style="width: 80%; margin: 0 auto; padding: 30px 0;">
+                        <h4>Short Description:</h4>
                         
                     </div>
-                    <h5><a href="#">View PDF</a></h5>
+                    <h5><a class="PublicationLink" href="#">View PDF</a></h5>
                 </div>
             </div>
         </div>
