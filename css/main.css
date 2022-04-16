@@ -1230,6 +1230,10 @@ h6 {
 .top_right p a i:hover {
   color: #de5221;
 }
+
+.disNone{
+  display: none!important;
+}
 /*********************footer_end****************/
 /*********************footer_bottom****************/
 #footer_bottom {
