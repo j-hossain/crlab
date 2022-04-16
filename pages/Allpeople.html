@@ -13,6 +13,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+    <script src="https://kit.fontawesome.com/f71646db13.js" crossorigin="anonymous"></script>
 	<script src="../scripts/main.js"></script>
 	<script src="../scripts/allPeople.js"></script>
 	<script src="../scripts/jquery-2.1.1.min.js"></script>
@@ -96,12 +97,12 @@
 				<div class="business_1">
 					<h2>People</h2>
 				</div>
-				<div class="team  clearfix">
+				<div id="allPeopleDiv" class="team  clearfix">
 					<div id="personTemplate" class="col-sm-3 disNone">
 						<div class="team_1 clearfix">
 							<div class="grid clearfix">
 								<figure class="effect-jazz">
-									<img id="personImage" src="" alt="Person Image">
+									<img class="personImage" src="" alt="Person Image">
 									<figcaption>
 
 									</figcaption>
@@ -109,13 +110,13 @@
 							</div>
 						</div>
 						<div class="team_inner clearfix text-center">
-							<h3 id="personName"></h3>
-							<h4 id="personDesignation"></h4>
-							<p class="para_2" id="personResearchArea"></p>
+							<h3 class="personName"></h3>
+							<h4 class="personDesignation"></h4>
+							<p class="para_2 personResearchArea"></p>
 							<ul>
-								<li><a href="#" id="personLinkedin"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#" id="personGoogleScholar"><i class="fa fa-google"></i></a></li>
-								<li><a href="#" id="personResearchGate"><i class="fab fa-researchgate"></i></a></li>
+								<li><a href="#" class="personLinkedin"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#" class="personGoogleScholar"><i class="fa fa-google"></i></a></li>
+								<li><a href="#" class="personResearchGate"><i class="fab fa-researchgate"></i></a></li>
 							</ul>
 						</div>
 					</div>
