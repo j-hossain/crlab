@@ -30,6 +30,7 @@ function setAllPeople(peopleData){
 
 function setPersonInfo(personData, div){
     div.querySelector(".personName").innerHTML = personData.acf.name;
+    div.querySelector(".personName").href = "./people.html?id="+personData.id;
     div.querySelector(".personDesignation").innerHTML = personData.acf.designation;
     div.querySelector(".personResearchArea").innerHTML = personData.acf.research_area;
     div.querySelector(".personLinkedin").href = personData.acf.linkedin;
