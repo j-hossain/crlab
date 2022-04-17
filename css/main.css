@@ -147,7 +147,7 @@ h6 {
 
 /*********************center****************/
 #center {
-  background-image: url(../img/bannerImage.jpg);
+  /* background-image: url(../img/bannerImage.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 150px;
