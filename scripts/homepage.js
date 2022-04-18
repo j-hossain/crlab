@@ -42,7 +42,10 @@ function getPublications(){
 function showPublicationList(list){
     let pubParent = document.getElementById("listOfPublications");
     let pubTemplate = document.getElementById("publicationTemplate");
-    for(let i=0;i<min(3,list.length);i++){
+    let max = list.length;
+    if(max>3)
+        max=3;
+    for(let i=0;i<max;i++){
         let pubBox = document.createElement('div');
         pubBox.innerHTML = pubTemplate.outerHTML;
         pubBox = pubBox.firstChild;
@@ -56,7 +59,7 @@ function showPublicationList(list){
 function setPublicationInfo(data, div){
     let p = div.querySelector(".publicationInfo");
     let a = div.querySelector(".PublicationLink");
-    a.href = "./publication.html?id="+data.id;
+    a.href = "./pages/publication.html?id="+data.id;
     p.innerHTML = getAuthors(data) + " (" + data.acf.publish_year + ") " + data.acf.publication_tilte;
     return div;
 }
@@ -68,7 +71,7 @@ function getAuthors(data){
     console.log(data);
     for(let i=x-1;i>=0;i--){
         let a = document.createElement('a');
-        a.href = "./people.html?id="+data._embedded["acf:post"][i].id;
+        a.href = "./pages/people.html?id="+data._embedded["acf:post"][i].id;
         a.innerHTML = data._embedded["acf:post"][i].acf.name;
         if(flag){
             as+=", ";
