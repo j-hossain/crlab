@@ -26,7 +26,7 @@ function setAbout(aboutData){
     console.log(aboutData);
     document.getElementById("aboutBigTitle").innerHTML = aboutData[0].acf.big_title;
     document.getElementById("aboutSubTitle").innerHTML = aboutData[0].acf.sub_title;
-    document.getElementById("aboutDetails").innerHTML = aboutData[0].acf.details_about;
+    document.getElementById("aboutDetails").innerHTML = new String(aboutData[0].acf.details_about).slice(0,400) + ".....";
     getInfo("media/"+aboutData[0].acf.about_image,setAboutImage);
 }
 
