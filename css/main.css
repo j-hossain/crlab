@@ -1275,6 +1275,8 @@ h6 {
   padding-top: 197px;
   padding-bottom: 140px;
 }
+
+
 .center_about_left {
   background-color: #00000082;
   width: 80%;
@@ -1311,6 +1313,21 @@ h6 {
 
 /*********************center_end****************/
 /*********************blog_main****************/
+#field_banner {
+  background-image: url(../img/carAutomationEventImage.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 197px;
+  padding-bottom: 140px;
+}
+#event_banner {
+  background-image: url(../img/carAutomationEventImage.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 197px;
+  padding-bottom: 140px;
+}
+
 #blog_main {
   background-image: url(../img/bannerImage.jpg);
   background-repeat: no-repeat;
