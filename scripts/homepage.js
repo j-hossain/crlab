@@ -2,13 +2,22 @@ let mediaData;
 init();
 
 function initFunctions(data){
-    mediaData = data;
+    mediaData = arrangeMediaById(data);
     getBanner();
+    getAllFields();
     getAbout();
     getPublications();
     getAllPeople();
-    getAllFields();
+    getAllBlogs();
     getContactInfo();
+}
+
+function arrangeMediaById(data){
+    let ret = {};
+    for(let i=0;i<data.length;i++){
+        ret[data[i].id] = data[i];
+    }
+    return ret;
 }
 
 function init(){
@@ -30,6 +39,42 @@ function setBannerImage(BannerImage){
     document.getElementById("center").style.backgroundImage = "url("+BannerImage.source_url+")";
 }
 
+// working on fields
+
+function getAllFields(){
+    getInfo("feilds",setAllFields);
+}
+
+
+function setAllFields(fieldData){
+    let fieldParent = document.getElementById("allFieldDiv");
+    let fieldTemplate = document.getElementById("fieldTemplate");
+    let min = fieldData.length;
+    if(min>3){
+        min = fieldData.length-3;
+    }
+    else{
+        min=0;
+    }
+    for(let i=fieldData.length-1;i>=min;i--){
+        let fieldBox = document.createElement('div');
+        fieldBox.innerHTML = fieldTemplate.outerHTML;
+        fieldBox = fieldBox.firstChild;
+        fieldBox.classList.remove("disNone");
+        fieldBox.id="";
+        fieldBox = setFieldInfo(fieldData[i],fieldBox);
+        fieldParent.append(fieldBox);
+    }
+}
+
+function setFieldInfo(fieldData, div){
+    div.querySelector(".title").innerHTML = fieldData.title.rendered;
+    div.querySelector(".title").href = "./pages/field.html?id="+fieldData.id;
+    div.querySelector(".shortDescription").innerHTML = new String(fieldData.acf.description).slice(0,100) + ".....";
+    div.querySelector(".image").src=mediaData[fieldData.acf.image].source_url;
+    return div;
+}
+
 function getAbout(){
     getInfo("about",setAbout);
 }
@@ -38,11 +83,7 @@ function setAbout(aboutData){
     document.getElementById("aboutBigTitle").innerHTML = aboutData[0].acf.big_title;
     document.getElementById("aboutSubTitle").innerHTML = aboutData[0].acf.sub_title;
     document.getElementById("aboutDetails").innerHTML = new String(aboutData[0].acf.details_about).slice(0,400) + ".....";
-    getInfo("media/"+aboutData[0].acf.about_image,setAboutImage);
-}
-
-function setAboutImage(aboutImage){
-    document.getElementById("aboutImage").src = aboutImage.source_url;
+    document.getElementById("aboutImage").src=mediaData[aboutData[0].acf.about_image].source_url;
 }
 
 
@@ -105,6 +146,7 @@ function setAllPeople(peopleData){
     if(min>3){
         min = peopleData.length-3;
     }
+    else min = 0;
     for(let i=peopleData.length-1;i>=min;i--){
         let peopleBox = document.createElement('div');
         peopleBox.innerHTML = pepTemplate.outerHTML;
@@ -124,62 +166,73 @@ function setPersonInfo(personData, div){
     div.querySelector(".personLinkedin").href = personData.acf.linkedin;
     div.querySelector(".personGoogleScholar").href = personData.acf.scholar;
     div.querySelector(".personResearchGate").href = personData.acf.research_gate;
-    for(let i=0;i<mediaData.length;i++){
-        if(mediaData[i].id==personData.acf.profile_image){
-            div.querySelector(".personImage").src=mediaData[i].source_url;
-        }
-    }
+    div.querySelector(".personImage").src=mediaData[personData.acf.profile_image].source_url;
     return div;
 }
-// working on fields
 
-function getAllFields(){
-    getInfo("feilds",setAllFields);
+//working on getting some recent blogs
+function getAllBlogs(){
+    getInfo("blog?_embed",setAllBlogs);
 }
 
-
-function setAllFields(fieldData){
-    let fieldParent = document.getElementById("allFieldDiv");
-    let fieldTemplate = document.getElementById("fieldTemplate");
-    let min = fieldData.length;
+function setAllBlogs(blogData){
+    let blogParent = document.getElementById("allBlogDiv");
+    let blogTemplate = document.getElementById("blogTemplate");
+    let min = blogData.length;
     if(min>3){
-        min = fieldData.length-3;
+        min = blogData.length-3;
     }
-    else{
-        min=0;
-    }
-    for(let i=fieldData.length-1;i>=min;i--){
-        let fieldBox = document.createElement('div');
-        fieldBox.innerHTML = fieldTemplate.outerHTML;
-        fieldBox = fieldBox.firstChild;
-        fieldBox.classList.remove("disNone");
-        fieldBox.id="";
-        fieldBox = setFieldInfo(fieldData[i],fieldBox);
-        fieldParent.append(fieldBox);
+    else min = 0;
+    for(let i=blogData.length-1;i>=min;i--){
+        let blogBox = document.createElement('div');
+        blogBox.innerHTML = blogTemplate.outerHTML;
+        blogBox = blogBox.firstChild;
+        blogBox.classList.remove("disNone");
+        blogBox.id="";
+        blogBox = setBlogInfo(blogData[i],blogBox);
+        blogParent.append(blogBox);
     }
 }
 
-function setFieldInfo(fieldData, div){
-    div.querySelector(".title").innerHTML = fieldData.title.rendered;
-    div.querySelector(".title").href = "./pages/field.html?id="+fieldData.id;
-    div.querySelector(".shortDescription").innerHTML = new String(fieldData.acf.description).slice(0,100) + ".....";
-    for(let i=0;i<mediaData.length;i++){
-        if(mediaData[i].id==fieldData.acf.image){
-            div.querySelector(".image").src=mediaData[i].source_url;
-        }
-    }
+function setBlogInfo(blogData, div){
+    div.querySelector(".blogImage").src=mediaData[blogData.featured_media].source_url;
+    div.querySelector(".blogWriter").innerHTML = getAuthors(blogData);
+    div.querySelector(".blogCategories").innerHTML = getblogCategories(blogData);
+    div.querySelector(".blogTitle").innerHTML = blogData.title.rendered;
+    div.querySelector(".blogTitle").href = "./pages/blog.html?id=" + blogData.id;
+    div.querySelector(".blogLink").href = "./pages/blog.html?id=" + blogData.id;
+    div.querySelector(".blogExerpt").innerHTML = blogData.excerpt.rendered;
+    div.querySelector(".publishDate").innerHTML = new Date(blogData.date.toString()).toUTCString();
     return div;
+}
+
+function getblogCategories(data){
+    let cats = "";
+    let flag = false;
+    // console.log(data._embedded["wp:term"]);
+    let catos = data._embedded["wp:term"][0];
+    let x = catos.length;
+    console.log(catos);
+    for(let i=x-1;i>=0;i--){
+        if(flag){
+            cats+=", ";
+        }
+        else{
+            flag=true;
+        }
+        cats +=catos[i].name;
+    }
+    return cats;
 }
 
 //getting the contact info for footer section
 function getContactInfo(){
     getInfo("contact_information",(contactData)=>{
-        // console.log(contactData);
         let footer = document.getElementById("footer");
         footer.querySelector(".address").innerHTML = contactData[0].acf.address;
         footer.querySelector(".emailAddress").innerHTML = contactData[0].acf.email_address;
         footer.querySelector(".emailAddress").href = "mailto:"+contactData[0].acf.email_address;
-        footer.querySelector(".phone").innerHTML = contactData[0].acf.mobile_number;
+        footer.querySelector(".phone").innerHTML ="Phone : " + contactData[0].acf.mobile_number;
         footer.querySelector(".emailLink").href = "mailto:"+contactData[0].acf.email_address;
         footer.querySelector(".facebookLink").href = contactData[0].acf.facebook_link;
         footer.querySelector(".twitterLink").href = contactData[0].acf.twitter_link;

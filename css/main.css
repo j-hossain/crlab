@@ -878,6 +878,15 @@ h6 {
 .blog_home {
   margin-top: 50px;
 }
+
+.blogExerpt{
+  font-size: 10px;
+}
+
+.blogWriter a{
+  color: #dc5a19;
+}
+
 .ih-item.square.effect15 {
   overflow: hidden;
   -webkit-perspective: 900px;
@@ -1236,7 +1245,8 @@ h6 {
 }
 
 #allPeopleDiv .col-sm-3{
-  border: 1px solid #de532162;
+  /* border: 1px solid #de532162; */
+  height: 100%;
   margin: 30px;
   padding: 10px;
 }
