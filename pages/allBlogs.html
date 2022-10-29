@@ -15,6 +15,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
 	<script src="../scripts/jquery-2.1.1.min.js"></script>
 	<script src="../scripts/bootstrap.min.js"></script>
+	<script src="../scripts/main.js"></script>
+	<script src="../scripts/allBlogs.js"></script>
 
 
 </head>
@@ -41,12 +43,12 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="color_1 " href="../index.html">Home</a></li>
-						<li><a class=" color_1" href="../pages/allFeilds.html">Fields</a></li>
-						<li><a class="color_1" href="../pages/about.html">About</a></li>
-						<li><a class=" color_1" href="../pages/allPublications.html">Publications</a></li>
-						<li><a class=" color_1" href="../pages/Allpeople.html">People</a></li>
-						<li><a class="color_1 active_1" href="../pages/allEvents.html">Events</a></li>
-						<li><a class="color_1" href="../pages/contact.html">Contacts</a></li>
+						<li><a class=" color_1" href="./allFeilds.html">Fields</a></li>
+						<li><a class="color_1" href="./about.html">About</a></li>
+						<li><a class=" color_1" href="./allPublications.html">Publications</a></li>
+						<li><a class=" color_1" href="./Allpeople.html">People</a></li>
+						<li><a class="color_1 active_1" href="./allBlogs.html">Blogs</a></li>
+						<li><a class="color_1" href="./contact.html">Contacts</a></li>
 
 						<!-- dropdown not required now, kept for future -->
 						<!-- <li class="dropdown">
@@ -79,8 +81,8 @@
 				  <div class="center_about_left">
 					<div class="blog_main_2 clearfix">
 					  <hr class="hr_2">
-					  <h1>All events of this Lab</h1>
-					  <p>Events</p>
+					  <h1>All Blogs Writen by Lab Members</h1>
+					  <p>Blogs</p>
 					</div>
 				  </div>
 				 </div>
@@ -89,157 +91,35 @@
 			 </div>
 		   </div>  	  
 	 </section>
-	<section id="blog_home">
+	 <section id="blog_home">
 		<div class="container">
 			<div class="row">
-				<div class="research clearfix">
-				</div>
-				<div class="blog_home clearfix">
-					<div class="col-sm-4">
+				<!-- <div class="research clearfix">
+					<h4 class="text-center">Recent Blogs</h4>
+					<h1 class="text-center">Useful blogs written by the members of our lab</h1>
+				</div> -->
+				<div id="allBlogDiv" class="blog_home clearfix">
+					<div id="blogTemplate" class="col-sm-4 disNone">
 						<div class="blog_home_1">
-							<div class="ih-item square colored effect15 left_to_right"><a href="#">
-									<div class="img"><img src="../img/carAutomationEventImage.png" alt="img"></div>
+							<div class="ih-item square colored effect15 left_to_right"><a class="blogLink" href="#">
+									<div class="img"><img class="blogImage" src="" alt="img"></div>
 									<div class="info">
-										<h3>Detail here</h3>
-										<p>Where the event was held, who organised it etc.</p>
+										<h3 class="blogWriter"></h3>
+										<p class="blogCategories"></p>
 									</div>
 								</a>
 							</div>
 						</div>
 						<div class="blog_home_2 clearfix text-center">
-							<h6>MAR 12, 2022</h6>
-							<h3><a href="./event.html">Car automation pros and cons</a></h3>
-							<p>Something in short to be written about the event</p>
-
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="blog_home_1">
-							<div class="ih-item square colored effect15 left_to_right"><a href="#">
-									<div class="img"><img src="../img/carAutomationEventImage.png" alt="img"></div>
-									<div class="info">
-										<h3>Detail here</h3>
-										<p>Where the event was held, who organised it etc.</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="blog_home_2 clearfix text-center">
-							<h6>MAR 12, 2022</h6>
-							<h3><a href="#">Car automation pros and cons</a></h3>
-							<p>Something in short to be written about the event</p>
-
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="blog_home_1">
-							<div class="ih-item square colored effect15 left_to_right"><a href="#">
-									<div class="img"><img src="../img/carAutomationEventImage.png" alt="img"></div>
-									<div class="info">
-										<h3>Detail here</h3>
-										<p>Where the event was held, who organised it etc.</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="blog_home_2 clearfix text-center">
-							<h6>MAR 12, 2022</h6>
-							<h3><a href="#">Car automation pros and cons</a></h3>
-							<p>Something in short to be written about the event</p>
-
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="blog_home_1">
-							<div class="ih-item square colored effect15 left_to_right"><a href="#">
-									<div class="img"><img src="../img/carAutomationEventImage.png" alt="img"></div>
-									<div class="info">
-										<h3>Detail here</h3>
-										<p>Where the event was held, who organised it etc.</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="blog_home_2 clearfix text-center">
-							<h6>MAR 12, 2022</h6>
-							<h3><a href="#">Car automation pros and cons</a></h3>
-							<p>Something in short to be written about the event</p>
-
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="blog_home_1">
-							<div class="ih-item square colored effect15 left_to_right"><a href="#">
-									<div class="img"><img src="../img/carAutomationEventImage.png" alt="img"></div>
-									<div class="info">
-										<h3>Detail here</h3>
-										<p>Where the event was held, who organised it etc.</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="blog_home_2 clearfix text-center">
-							<h6>MAR 12, 2022</h6>
-							<h3><a href="#">Car automation pros and cons</a></h3>
-							<p>Something in short to be written about the event</p>
-
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="blog_home_1">
-							<div class="ih-item square colored effect15 left_to_right"><a href="#">
-									<div class="img"><img src="../img/carAutomationEventImage.png" alt="img"></div>
-									<div class="info">
-										<h3>Detail here</h3>
-										<p>Where the event was held, who organised it etc.</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="blog_home_2 clearfix text-center">
-							<h6>MAR 12, 2022</h6>
-							<h3><a href="#">Car automation pros and cons</a></h3>
-							<p>Something in short to be written about the event</p>
-
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="blog_home_1">
-							<div class="ih-item square colored effect15 left_to_right"><a href="#">
-									<div class="img"><img src="../img/carAutomationEventImage.png" alt="img"></div>
-									<div class="info">
-										<h3>Detail here</h3>
-										<p>Where the event was held, who organised it etc.</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="blog_home_2 clearfix text-center">
-							<h6>MAR 12, 2022</h6>
-							<h3><a href="#">Car automation pros and cons</a></h3>
-							<p>Something in short to be written about the event</p>
-
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="blog_home_1">
-							<div class="ih-item square colored effect15 left_to_right"><a href="#">
-									<div class="img"><img src="../img/carAutomationEventImage.png" alt="img"></div>
-									<div class="info">
-										<h3>Detail here</h3>
-										<p>Where the event was held, who organised it etc.</p>
-									</div>
-								</a>
-							</div>
-						</div>
-						<div class="blog_home_2 clearfix text-center">
-							<h6>MAR 12, 2022</h6>
-							<h3><a href="#">Car automation pros and cons</a></h3>
-							<p>Something in short to be written about the event</p>
+							<h6 class="publishDate"></h6>
+							<h3><a href="#" class="blogTitle"></a></h3>
+							<p class="blogExerpt"></p>
 
 						</div>
 					</div>
 				</div>
+				<!-- <p class="orangeButton" style="text-align: right;"><a href="./pages/allBlogs.html">Show all <i
+							class="fa fa-arrow-right" aria-hidden="true"></i></a></p> -->
 			</div>
 		</div>
 	</section>
@@ -249,27 +129,22 @@
 				<div class="footer clearfix">
 					<div class="col-sm-6">
 						<div class="footer_left">
-							<h2><a href="/index.html">Cyber Research Lab</a></h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Praesent libero Sed nisi
-								Nulla quis sem at nibh<br> elementum imperdiet.</p>
-							<p>Class aptent taciti sociosqu ad litora torquent per<br> conubia nostra, per inceptos
-								himenaeos.<br> Curabitursodales ligula in libero!
-								<br> Praesent libero Sed nisi Nulla quis sem at nibh<br> conubia nostra, per inceptos
-								himenaeos.
+							<h2><a href="../index.html">Cyber Research Lab</a></h2>
+							<p>This is a virtual lab where people from multiple institutions work to achieve benchmarks based on cyber research.
+							</p>
+							<p>Main goal of this lab is to work on various aspects in collaboration of people from different place<br>Contact us if you are interested to join the lab...
 							</p>
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="footer_middle">
 							<h2>Contact Us</h2>
-							<h5>1500 Lorem Ipsum Street<br>
-								Delhi, JK 46000</h5>
-							<h4><a href="#">info@gmail.com</a></h4>
-							<h5>Tel: <a href="#">(300) 156-8870</a></h5>
+							<h5 class="address"></h5>
+							<h4 class="emailAddress"></h4>
+							<h5 class="phone">Tel: </h5>
 							<div class="footer_middle_inner clearfix">
-								<p>Email us</p>
-								<p>More contacts</p>
-								<p>Another Details</p>
+								<p><a class="emailLink" href="">Email us</a></p>
+								<p><a href="./contact.html">Contact Us</a></p>
 							</div>
 						</div>
 					</div>
@@ -278,19 +153,17 @@
 							<h2>Follow us</h2>
 							<div class="top_right">
 								<p>
-									<a class="tag_1" href="#"><i class="fa fa-facebook"></i></a>
-									<a class="tag_2" href="#"><i class="fa fa-twitter"></i></a>
-									<a class="tag_3" href="#"><i class="fa fa-google-plus"></i></a>
-									<a class="tag_4 marg_right" href="#"><i class="fa fa-linkedin"></i></a>
+									<a class="tag_1 facebookLink" href=""><i class="fa fa-facebook"></i></a>
+									<a class="tag_2 twitterLink" href=""><i class="fa fa-twitter"></i></a>
+									<a class="tag_3 googlePlusLink" href=""><i class="fa fa-google-plus"></i></a>
+									<a class="tag_4 marg_right linkedinLink" href=""><i class="fa fa-linkedin"></i></a>
 								</p>
 							</div>
 							<h2>Popular</h2>
 							<div class="footer_middle_inner clearfix">
-								<p><a href="/index.html">Home</a></p>
-								<p><a href="/pages/allFeilds.html">Feilds</a></p>
-								<p><a href="/pages/about.html">About</a></p>
-								<p><a href="/pages/allEvents.html">Events</a></p>
-								<p><a href="/pages/allPublications.html">Publications</a></p>
+								<p><a href="../index.html">Home</a></p>
+								<p><a href="./allBlogs.html">Blogs</a></p>
+								<p><a href="./Allpeople.html">People</a></p>
 							</div>
 						</div>
 					</div>

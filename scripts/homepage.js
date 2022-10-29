@@ -9,7 +9,6 @@ function initFunctions(data){
     getPublications();
     getAllPeople();
     getAllBlogs();
-    getContactInfo();
 }
 
 function arrangeMediaById(data){
@@ -223,20 +222,4 @@ function getblogCategories(data){
         cats +=catos[i].name;
     }
     return cats;
-}
-
-//getting the contact info for footer section
-function getContactInfo(){
-    getInfo("contact_information",(contactData)=>{
-        let footer = document.getElementById("footer");
-        footer.querySelector(".address").innerHTML = contactData[0].acf.address;
-        footer.querySelector(".emailAddress").innerHTML = contactData[0].acf.email_address;
-        footer.querySelector(".emailAddress").href = "mailto:"+contactData[0].acf.email_address;
-        footer.querySelector(".phone").innerHTML ="Phone : " + contactData[0].acf.mobile_number;
-        footer.querySelector(".emailLink").href = "mailto:"+contactData[0].acf.email_address;
-        footer.querySelector(".facebookLink").href = contactData[0].acf.facebook_link;
-        footer.querySelector(".twitterLink").href = contactData[0].acf.twitter_link;
-        footer.querySelector(".googlePlusLink").href = contactData[0].acf.google_link;
-        footer.querySelector(".linkedinLink").href = contactData[0].acf.linkedin_link;
-    });
 }

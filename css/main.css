@@ -1288,9 +1288,10 @@ h6 {
 
 
 .center_about_left {
-  background-color: #00000082;
-  width: 80%;
+  background-color: #000000ac;
+  width: 100%;
   padding: 20px 20px 30px 20px;
+  border-radius: 20px;
 }
 
 .center_about_left_inner_1 .hr_2 {
@@ -1333,9 +1334,14 @@ h6 {
 #event_banner {
   background-image: url(../img/carAutomationEventImage.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  padding-top: 197px;
-  padding-bottom: 140px;
+  background-size: contain;
+  background-position: center;
+  padding-top: 300px;
+  padding-bottom: 20px;
+}
+
+#blogContent{
+  margin-bottom: 30px;
 }
 
 #blog_main {
@@ -1357,10 +1363,10 @@ h6 {
   width: 20%;
   float: left;
 }
-.blog_main_2 h1 {
+.blog_main_2 h2 {
   clear: left;
   color: #ffffff;
-  font-size: 55px;
+  /* font-size: 55px; */
 }
 .blog_main_2 p {
   margin-top: 5px;
