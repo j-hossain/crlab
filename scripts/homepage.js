@@ -208,10 +208,8 @@ function setBlogInfo(blogData, div){
 function getblogCategories(data){
     let cats = "";
     let flag = false;
-    // console.log(data._embedded["wp:term"]);
     let catos = data._embedded["wp:term"][0];
     let x = catos.length;
-    console.log(catos);
     for(let i=x-1;i>=0;i--){
         if(flag){
             cats+=", ";

@@ -25,7 +25,7 @@ function getAuthors(data){
     let x = data._embedded["acf:post"].length;
     for(let i=x-1;i>=0;i--){
         let a = document.createElement('a');
-        a.href = "./pages/people.html?id="+data._embedded["acf:post"][i].id;
+        a.href = "./people.html?id="+data._embedded["acf:post"][i].id;
         a.innerHTML = data._embedded["acf:post"][i].acf.name;
         if(flag){
             as+=", ";

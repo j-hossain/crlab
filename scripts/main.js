@@ -8,8 +8,6 @@ function getInfo(gotothis, dothis){
         dothis(JSON.parse(this.responseText));
     }
     xhttp.open("GET", requrl);
-    // xhttp.setRequestHeader('Access-Control-Allow-Origin','*');
-    // xhttp.setRequestHeader('mode','no-cors');
     xhttp.send();
 }
 
