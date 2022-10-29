@@ -3,6 +3,7 @@ init();
 
 function initFunctions(data){
     mediaData = arrangeMediaById(data);
+    console.log(mediaData);
     getBanner();
     getAllFields();
     getAbout();
@@ -21,7 +22,7 @@ function arrangeMediaById(data){
 
 function init(){
     //getting all media files at the beginign
-    getInfo("media",initFunctions);
+    getInfo("media?posts_per_page=100",initFunctions);
 }
 
 function getBanner(){
@@ -79,6 +80,7 @@ function getAbout(){
 }
 
 function setAbout(aboutData){
+    console.log(aboutData);
     document.getElementById("aboutBigTitle").innerHTML = aboutData[0].acf.big_title;
     document.getElementById("aboutSubTitle").innerHTML = aboutData[0].acf.sub_title;
     document.getElementById("aboutDetails").innerHTML = new String(aboutData[0].acf.details_about).slice(0,400) + ".....";
