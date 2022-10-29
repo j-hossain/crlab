@@ -1363,10 +1363,10 @@ h6 {
   width: 20%;
   float: left;
 }
-.blog_main_2 h2 {
+.blog_main_2 h1 {
   clear: left;
   color: #ffffff;
-  /* font-size: 55px; */
+  font-size: 38px;
 }
 .blog_main_2 p {
   margin-top: 5px;
@@ -2414,7 +2414,7 @@ hr.star-primary:after {
   #center {
     margin-top: 0;
   }
-  .center_left {
+  .left {
     padding-top: 0;
     padding-top: 30px;
   }
