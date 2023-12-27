@@ -1,28 +1,12 @@
-let mediaData;
-init();
+initFunctions();
 
-function initFunctions(data){
-    mediaData = arrangeMediaById(data);
-    console.log(mediaData);
+function initFunctions(){
     getBanner();
     getAllFields();
     getAbout();
     getPublications();
     getAllPeople();
     getAllBlogs();
-}
-
-function arrangeMediaById(data){
-    let ret = {};
-    for(let i=0;i<data.length;i++){
-        ret[data[i].id] = data[i];
-    }
-    return ret;
-}
-
-function init(){
-    //getting all media files at the beginign
-    getInfo("media?posts_per_page=100",initFunctions);
 }
 
 function getBanner(){
@@ -71,7 +55,7 @@ function setFieldInfo(fieldData, div){
     div.querySelector(".title").innerHTML = fieldData.title.rendered;
     div.querySelector(".title").href = "./pages/field.html?id="+fieldData.id;
     div.querySelector(".shortDescription").innerHTML = new String(fieldData.acf.description).slice(0,100) + ".....";
-    div.querySelector(".image").src=mediaData[fieldData.acf.image].source_url;
+    setMedia(fieldData.acf.image,div.querySelector(".image"));
     return div;
 }
 
@@ -84,7 +68,7 @@ function setAbout(aboutData){
     document.getElementById("aboutBigTitle").innerHTML = aboutData[0].acf.big_title;
     document.getElementById("aboutSubTitle").innerHTML = aboutData[0].acf.sub_title;
     document.getElementById("aboutDetails").innerHTML = new String(aboutData[0].acf.details_about).slice(0,400) + ".....";
-    document.getElementById("aboutImage").src=mediaData[aboutData[0].acf.about_image].source_url;
+    setMedia(aboutData[0].acf.about_image,document.getElementById("aboutImage"));
 }
 
 
@@ -145,7 +129,7 @@ function setAllPeople(peopleData){
     let pepTemplate = document.getElementById("personTemplate");
     let min = peopleData.length;
     if(min>3){
-        min = peopleData.length-3;
+        min = peopleData.length-4;
     }
     else min = 0;
     for(let i=peopleData.length-1;i>=min;i--){
@@ -161,13 +145,13 @@ function setAllPeople(peopleData){
 
 function setPersonInfo(personData, div){
     div.querySelector(".personName").innerHTML = personData.acf.name;
-    div.querySelector(".personName").href = "./pages/people.html?id="+personData.id;
+    div.querySelector(".personLink").href = "./pages/people.html?id="+personData.id;
     div.querySelector(".personDesignation").innerHTML = personData.acf.designation;
     div.querySelector(".personResearchArea").innerHTML = personData.acf.research_area;
     div.querySelector(".personLinkedin").href = personData.acf.linkedin;
     div.querySelector(".personGoogleScholar").href = personData.acf.scholar;
     div.querySelector(".personResearchGate").href = personData.acf.research_gate;
-    div.querySelector(".personImage").src=mediaData[personData.acf.profile_image].source_url;
+    setMedia(personData.acf.profile_image,div.querySelector(".personImage"));
     return div;
 }
 
@@ -196,7 +180,7 @@ function setAllBlogs(blogData){
 }
 
 function setBlogInfo(blogData, div){
-    div.querySelector(".blogImage").src=mediaData[blogData.featured_media].source_url;
+    setMedia(blogData.featured_media,div.querySelector(".blogImage"));
     div.querySelector(".blogWriter").innerHTML = getAuthors(blogData);
     div.querySelector(".blogCategories").innerHTML = getblogCategories(blogData);
     div.querySelector(".blogTitle").innerHTML = blogData.title.rendered;

@@ -1,15 +1,11 @@
 getAllPeople();
 
-let mediaData;
-
 
 function getAllPeople(){
-    getInfo("media",getPeopleInfo);
+    getPeopleInfo();
 }
 
-function getPeopleInfo(data){
-    console.log(data);
-    mediaData = data;
+function getPeopleInfo(){
     getInfo("people",setAllPeople);
 }
 
@@ -30,17 +26,13 @@ function setAllPeople(peopleData){
 
 function setPersonInfo(personData, div){
     div.querySelector(".personName").innerHTML = personData.acf.name;
-    div.querySelector(".personName").href = "./people.html?id="+personData.id;
+    div.querySelector(".personLink").href = "./people.html?id="+personData.id;
     div.querySelector(".personDesignation").innerHTML = personData.acf.designation;
     div.querySelector(".personResearchArea").innerHTML = personData.acf.research_area;
     div.querySelector(".personLinkedin").href = personData.acf.linkedin;
     div.querySelector(".personGoogleScholar").href = personData.acf.scholar;
     div.querySelector(".personResearchGate").href = personData.acf.research_gate;
-    for(let i=0;i<mediaData.length;i++){
-        if(mediaData[i].id==personData.acf.profile_image){
-            div.querySelector(".personImage").src=mediaData[i].source_url;
-        }
-    }
+    setMedia(personData.acf.profile_image,div.querySelector(".personImage"))
     return div;
 }
 

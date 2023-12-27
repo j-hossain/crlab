@@ -1,7 +1,7 @@
 function getInfo(gotothis, dothis){
     // for development purpose
     // const baseurl = "http://localhost/crlabdev";
-    const baseurl = "https://crlabback.000webhostapp.com";
+    const baseurl = "https://crlab.jahin.xyz/index.php";
     const requrl = baseurl + "/wp-json/wp/v2/" + gotothis;
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
@@ -11,11 +11,19 @@ function getInfo(gotothis, dothis){
     xhttp.send();
 }
 
+function setMedia(id, element){
+    element.src = "../img/loading.gif";
+    getInfo("media/"+id,(mediaData)=>{
+        element.src = mediaData.source_url;
+    });
+}
+
 getContactInfo();
 
 //getting the contact info for footer section
 function getContactInfo(){
     getInfo("contact_information",(contactData)=>{
+        if(contactData.length==0) return
         let footer = document.getElementById("footer");
         footer.querySelector(".address").innerHTML = contactData[0].acf.address;
         footer.querySelector(".emailAddress").innerHTML = contactData[0].acf.email_address;

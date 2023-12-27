@@ -13,11 +13,7 @@ function ShowPerson(data){
     document.getElementById("personLinkedin").href = data.acf.linkedin;
     document.getElementById("personGoogleScholar").href = data.acf.scholar;
     document.getElementById("personResearchGate").href = data.acf.research_gate;
-    getInfo("media/"+data.acf.profile_image,loadImage);
-}
-
-function loadImage(imageData){
-    document.getElementById("personImage").src = imageData.source_url;
+    setMedia(data.acf.profile_image,document.getElementById("personImage"))
 }
 
 function getPublicationList(pubs){

@@ -1,22 +1,7 @@
-let mediaData;
-init();
+initFunctions();
 
-function initFunctions(data){
-    mediaData = arrangeMediaById(data);
+function initFunctions(){
     getAllBlogs();
-}
-
-function arrangeMediaById(data){
-    let ret = {};
-    for(let i=0;i<data.length;i++){
-        ret[data[i].id] = data[i];
-    }
-    return ret;
-}
-
-function init(){
-    //getting all media files at the beginign
-    getInfo("media",initFunctions);
 }
 
 function getAuthors(data){
@@ -59,7 +44,7 @@ function setAllBlogs(blogData){
 }
 
 function setBlogInfo(blogData, div){
-    div.querySelector(".blogImage").src=mediaData[blogData.featured_media].source_url;
+    setMedia(blogData.featured_media,div.querySelector(".blogImage"));
     div.querySelector(".blogWriter").innerHTML = getAuthors(blogData);
     div.querySelector(".blogCategories").innerHTML = getblogCategories(blogData);
     div.querySelector(".blogTitle").innerHTML = blogData.title.rendered;

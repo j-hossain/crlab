@@ -147,7 +147,7 @@ h6 {
 
 /*********************center****************/
 #center {
-  /* background-image: url(../img/bannerImage.jpg); */
+  background-image: url(../img/Netflix_LoadTime.gif);
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 150px;
@@ -1244,10 +1244,15 @@ h6 {
   display: none!important;
 }
 
-#allPeopleDiv .col-sm-3{
+
+#allPeopleDiv{
+  row-gap: 20px;
+}
+
+#allPeopleDiv .col-sm-4{
   /* border: 1px solid #de532162; */
   height: 100%;
-  margin: 30px;
+  margin-top: 30px;
   padding: 10px;
 }
 /*********************footer_end****************/
@@ -1279,7 +1284,7 @@ h6 {
 
 /*********************center_about****************/
 #center_about {
-  background-image: url();
+  background-image: url(../img/Netflix_LoadTime.gif);
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 197px;
@@ -1325,14 +1330,14 @@ h6 {
 /*********************center_end****************/
 /*********************blog_main****************/
 #field_banner {
-  background-image: url(../img/carAutomationEventImage.png);
+  background-image: url(../img/loading.gif);
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 197px;
   padding-bottom: 140px;
 }
 #event_banner {
-  background-image: url(../img/carAutomationEventImage.png);
+  background-image: url(../img/loading.gif);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -1379,7 +1384,7 @@ h6 {
 /*********************blog_main_end****************/
 /*********************details_main****************/
 #details_main {
-  background-image: url(../img/51.jpg);
+  background-image: url(../img/Netflix_LoadTime.gif);
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 197px;
@@ -1411,7 +1416,7 @@ h6 {
 /*********************details_main_end****************/
 /*********************gallery_main****************/
 #gallery_main {
-  background-image: url(../img/52.jpg);
+  background-image: url(../img/Netflix_LoadTime.gif);
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 197px;
@@ -1443,7 +1448,7 @@ h6 {
 /*********************gallery_main_end****************/
 /*********************team_main****************/
 #team_main {
-  background-image: url(../img/53.jpg);
+  background-image: url(../img/Netflix_LoadTime.gif);
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 197px;
@@ -1475,7 +1480,7 @@ h6 {
 /*********************team_main_end****************/
 /*********************contact_main****************/
 #contact_main {
-  background-image: url(../img/54.jpg);
+  background-image: url(../img/Netflix_LoadTime.gif);
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 197px;
@@ -1842,13 +1847,20 @@ figure.effect-jazz figcaption::after {
 
 figure.effect-jazz h2,
 figure.effect-jazz p {
-  opacity: 1;
+  opacity: 0;
   -webkit-transform: scale3d(0.8, 0.8, 1);
   transform: scale3d(0.8, 0.8, 1);
 }
 
 figure.effect-jazz h2 {
-  padding-top: 26%;
+  background-color: rgba(0, 0, 0, 0.5);
+  word-spacing: 5px;
+  font-size: 24px;
+  font-weight: normal;
+  text-transform: capitalize;
+  margin-top: 100%;
+  padding: 5px;
+  border-radius: 5px;
   -webkit-transition: -webkit-transform 0.35s;
   transition: transform 0.35s;
 }
@@ -2678,6 +2690,12 @@ hr.star-primary:after {
   .gallery_main_1 h1 {
     font-size: 31px;
   }
+  figure.effect-jazz h2 {
+    margin-top: 30%;
+  }
+  figure.effect-jazz img{
+    object-fit: contain;
+  }
   #team_main {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -2774,10 +2792,6 @@ hr.star-primary:after {
   }
   .top_right p .tag_4 i {
     padding: 10px;
-  }
-  #team figure.effect-jazz h2 {
-    font-size: 18px;
-    padding: 0;
   }
   #team figure.effect-jazz p {
     padding: 0;
@@ -3050,10 +3064,6 @@ hr.star-primary:after {
   }
   .top_right p .tag_4 i {
     padding: 10px;
-  }
-  #team figure.effect-jazz h2 {
-    font-size: 18px;
-    padding: 0;
   }
   #team figure.effect-jazz p {
     padding: 0;

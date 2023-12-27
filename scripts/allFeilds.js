@@ -1,27 +1,11 @@
 let mediaData;
-init();
+initFunctions();
 
-function initFunctions(data){
-    mediaData = arrangeMediaById(data);
+function initFunctions(){
     getAllFields();
 }
 
-function arrangeMediaById(data){
-    let ret = {};
-    for(let i=0;i<data.length;i++){
-        ret[data[i].id] = data[i];
-    }
-    return ret;
-}
-
-function init(){
-    //getting all media files at the beginign
-    getInfo("media",initFunctions);
-}
-
-
 // working on fields
-
 function getAllFields(){
     getInfo("feilds",setAllFields);
 }
@@ -52,7 +36,7 @@ function setFieldInfo(fieldData, div){
     div.querySelector(".title").innerHTML = fieldData.title.rendered;
     div.querySelector(".title").href = "./field.html?id="+fieldData.id;
     div.querySelector(".shortDescription").innerHTML = new String(fieldData.acf.description).slice(0,100) + ".....";
-    div.querySelector(".image").src=mediaData[fieldData.acf.image].source_url;
+    setMedia(fieldData.acf.image,div.querySelector(".image"));
     return div;
 }
 
