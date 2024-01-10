@@ -6,10 +6,10 @@ function getAllPeople() {
 }
 
 function getPeopleInfo() {
-    getInfo("people", setAllPeople);
+    getInfo("people?_embed", mapPeopleType);
 }
 
-function setAllPeople(peopleData) {
+function mapPeopleType(peopleData) {
     peopleData.sort((a, b) => {
         if (a.acf.order != b.acf.order) {
             return a.acf.order - b.acf.order;
@@ -17,8 +17,34 @@ function setAllPeople(peopleData) {
         if (a.date < b.date) return -1;
         return 1;
     })
-    let pepParent = document.getElementById("allPeopleDiv");
-    let pepTemplate = document.getElementById("personTemplate");
+    let mapedPeopleData = {}
+    for (i in peopleData) {
+        let memberType = peopleData[i]?.acf?.member_type
+        if (mapedPeopleData[memberType] == undefined) {
+            mapedPeopleData[memberType] = new Array()
+        }
+        mapedPeopleData[memberType].push(peopleData[i])
+    }
+
+    for (memberType in mapedPeopleData) {
+        setAllPeople(mapedPeopleData[memberType], getMemberTypeParentDiv(memberType))
+    }
+}
+
+function getMemberTypeParentDiv(memberType) {
+    let mainDiv = document.getElementById('business')
+    let memberDivTemplate = mainDiv.querySelector('.container')
+    let memberDiv = document.createElement('div')
+    memberDiv.innerHTML = memberDivTemplate.outerHTML
+    memberDiv = memberDiv.firstChild
+    memberDiv.classList.remove('disNone')
+    mainDiv.append(memberDiv)
+    memberDiv.querySelector('.business_1').getElementsByTagName('h2')[0].innerHTML = memberType
+    return memberDiv.querySelector(".allPeopleDiv")
+}
+
+function setAllPeople(peopleData, pepParent) {
+    let pepTemplate = pepParent.querySelector(".personTemplate");
     for (let i = 0; i < peopleData.length; i++) {
         let peopleBox = document.createElement('div');
         peopleBox.innerHTML = pepTemplate.outerHTML;
