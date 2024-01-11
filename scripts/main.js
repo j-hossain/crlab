@@ -1,7 +1,8 @@
 function getInfo(gotothis, dothis) {
     // for development purpose
     // const baseurl = "http://localhost/crlabdev";
-    const baseurl = "https://crlab.jahin.xyz/index.php";
+    // const baseurl = "https://crlab.jahin.xyz/index.php";
+    const baseurl = "https://cms.cyberresearch.bubt.edu.bd/index.php";
     const requrl = baseurl + "/wp-json/wp/v2/" + gotothis;
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
